@@ -119,33 +119,34 @@
   @include media-breakpoint-between(sm, md) {
     .carousel-item-right.active,
     .carousel-item-next {
-        transform: translateX(50%);
+      transform: translateX(50%);
     }
     .carousel-item-left.active,
     .carousel-item-prev {
-        transform: translateX(-50%);
+      transform: translateX(-50%);
     }
   }
 
   @include media-breakpoint-between(md, lg) {
     .carousel-item-right.active,
     .carousel-item-next {
-        transform: translateX(33.3333%);
+      transform: translateX(33.3333%);
     }
     .carousel-item-left.active,
     .carousel-item-prev {
-        transform: translateX(-33.3333%);
+      transform: translateX(-33.3333%);
     }
   }
 
   @include media-breakpoint-up(lg) {
     .carousel-item-right.active,
     .carousel-item-next {
-        transform: translateX(25%);
+      transform: translateX(25%);
     }
+
     .carousel-item-left.active,
     .carousel-item-prev {
-        transform: translateX(-25%);
+      transform: translateX(-25%);
     }
   }
 }
