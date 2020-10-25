@@ -29,6 +29,9 @@ $('.js-showLvl').on('click', function() {
 ;(function ($) {
   var $contractorsSlider = $('.carousel-multiple-items');
   var itemsPerSlide = 2;
+  var totalItems = $('.carousel-item', $contractorsSlider).length;
+  // add variable if itemsClone = totalItems (something) then don't show carousel contro
+
   var $windowWidth = $(window).width();
   if ($windowWidth >= 1200) {
     itemsPerSlide = 4;
@@ -37,10 +40,19 @@ $('.js-showLvl').on('click', function() {
   } else if ($windowWidth < 567) {
     itemsPerSlide = 1;
   }
+console.log(totalItems);
+  if(itemsPerSlide >= totalItems) {
+    $('.carousel-control-next', $contractorsSlider).hide();
+    $('.carousel-control-prev', $contractorsSlider).hide();
+  }
 
   $contractorsSlider.find('.carousel-item').each(function(){
     var next = $(this).next();
     var itemsClone = 4;
+
+    if(itemsPerSlide > totalItems) {
+      itemsClone = totalItems - 2;
+    }
 
     if (!next.length) {
       next = $(this).siblings(':first');
@@ -56,40 +68,16 @@ $('.js-showLvl').on('click', function() {
     }
   });
 
-  $contractorsSlider
-    .on('slide.bs.carousel', function (e) {
+  $contractorsSlider.on('slid.bs.carousel', function (e) {
       var idx = $(e.relatedTarget).index();
-
-      var totalItems = $('.carousel-item', this).length;
-
-      if (idx >= totalItems - itemsPerSlide - 1) {
-        var it = itemsPerSlide - (totalItems - idx);
-
-        for (var i=0; i<it; i++) {
-          // append slides to end
-          if (e.direction=="left") {
-            $('.carousel-item').eq(i).appendTo('.carousel-inner');
-          }
-          else {
-            $('.carousel-item').eq(0).appendTo('.carousel-inner');
-          }
-        }
-      }
-    })
-
-    .on('slid.bs.carousel', function (e) {
-      var idx = $(e.relatedTarget).index();
-      var totalItems = $('.carousel-item', this).length;
 
       if (idx === 0) {
         $('.carousel-control-prev').hide();
-        return;
       } else {
         $('.carousel-control-prev').show();
       }
-      if (idx >= totalItems - itemsPerSlide) {
+      if (idx === totalItems - itemsPerSlide) {
         $('.carousel-control-next').hide();
-        return;
       } else {
         $('.carousel-control-next').show();
       }
