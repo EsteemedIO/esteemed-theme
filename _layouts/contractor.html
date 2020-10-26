@@ -3,45 +3,103 @@ layout: default
 class: "page-profile-main"
 ---
 
-<div class="container">
-  <div class="row profile2-main">
-    <div class="col-sm-8 col-md-9">
-      <section class="c-card c-card--inverted-outline">
-        <img typeof="foaf:Image" src="{{ page.image }}" width="100" height="100" alt="{{ page._name }}" class="field-name-field-profile-picture">
-        <h1 class="text-left">{{ page._name }}</h1>
-        <h2>{{ page.location }}</h2>
-        <p style="clear:left">
-          {%- for title in page.titles -%}
-          {{ site.data.config.valueMap[title] }}{%- if forloop.last != true %} | {% endif -%}
-          {%- endfor -%}
-        </p>
-        <p>{{ page[site.bio] }}</p>
-      </section>
-      <section class="c-card c-card--inverted-outline tags--main">
-        <h3>Skills</h3>
-        {% for skill in page.skills %}
-        <a typeof="skos:Concept" property="rdfs:label skos:prefLabel">{{ site.data.config.valueMap[skill] }}</a>
+{% assign dir = page.dir | split: '/'  %}
+{% assign subdir = dir[2] %}
+{% assign dir = dir[1] %}
+{% if dir == "contractors" %}
+{% assign profiles = site.data.profiles | where: 'titles', page.key %}
+<div class="contractorsMenu">
+  <div class="block__content">
+    <div class="container">
+      <button type="button" class="contractorsMenu-btn js-contractorsMenuBtn jquery-once-1-processed"></button>
+      <ul class="menu nav nav-pills nav-stacked">
+        {% for title in site.data.config.titles %}
+        <li>
+          <a href="/contractors/{{ title.key }}/" title="{{ site.data.config.valueMap[title.key] }}"{% if subdir == title.key %} class="active"{% endif %}>{{ site.data.config.valueMap[title.key] }}</a>
+        </li>
         {% endfor %}
-      </section>
-    </div>
-    <div class="col-sm-4 col-md-3">
-      <section class="c-card c-card--inverted-outline">
-        <h3>Availability</h3>
-        <p>{{ site.data.config.valueMap[page.availability] }}</p>
-      </section>
-      <section class="c-card c-card--inverted-outline">
-        <h3>Citizenship</h3>
-        <p>{{ site.data.config.valueMap[page.citizenship] }}</p>
-      </section>
-      <section class="c-card c-card--inverted-outline">
-        <h3>Experience Level</h3>
-        {% assign experience = page[site.experience] %}
-        <p>{{ site.data.config.valueMap[experience] }}</p>
-      </section>
-      <section class="c-card c-card--inverted-outline">
-        <h3>Languages</h3>
-        <p>English Proficiency: {{ site.data.config.valueMap[page.english] }} </p>
-      </section>
+        <li class="last leaf menu-mlid-3516 menu-link-see-all">
+          <a href="/contractors/">See All</a>
+        </li>
+      </ul>
     </div>
   </div>
 </div>
+{% else %}
+{% assign profiles = site.data.profiles | where: 'skills', page.key %}
+{% endif %}
+
+{% assign contractor = site.data.contractors[page.key] %}
+<div class="contractorsHeader">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-lg-6 contractorsHeader__left">
+        <h1>{{ contractor.title }}</h1>
+        <div class="contractorsHeader__left--bottom">
+          <a class="contractorsHeader__left--button btn btn-primary" href="#contact-form">Get Started</a>
+        </div>
+      </div>
+      <div class="col-xs-12 col-lg-6 contractorsHeader__right">
+        <div class="contractorsHeader__right--image" style="background-image: url({{ contractor.image }})"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% if profiles.size > 0 %}
+<div class="contractorsContent sectionGrey">
+  <div class="block__content">
+    <div class="container">
+      <div class="view-content">
+        <div id="contractorsSlider" class="contractorsSlider carousel-multiple-items carousel slide" data-interval="false" data-wrap="false">
+          <div class="carousel-inner row w-100 mx-auto flex-nowrap" role="listbox">
+            {% for profile_id in site.data.contractors[page.key].profiles %}
+              {% assign profile = profiles | where: 'id', profile_id | first %}
+              <div class="contractorBoxWrap carousel-item{% if forloop.index == 1 %} active{% endif %}">
+                {% include card.html content=profile %}
+              </div>
+            {% endfor %}
+
+            <div class="contractorBoxWrap carousel-item">
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex">
+                <div class="contractorBox signUp">
+                  <div class="contractorBoxContent justify-content-center">
+                    <h3 class="contractorBox-signUp">Sign up for FREE to view more great contractors</h3>
+                    <a href="/getting-started/" class="btn btn--blue btn-signUp">Get Started</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <a href="#contractorsSlider" data-slide="prev" class="carousel-control-prev" aria-label="previous" aria-disabled="false" style="display: none;">&nbsp;</a>
+          <a href="#contractorsSlider" data-slide="next" class="carousel-control-next" aria-label="next" aria-disabled="false">&nbsp;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% else %}
+<h1>New talent with this skillset coming soon!</h1>
+{% endif %}
+
+<div class="container" style="padding-bottom: 20px">
+  <h2 style="text-align: center; padding-top: 2em;">How it works</h2>
+  {% include howitworks-foremployers.html %}
+
+  {% include agencies.html %}
+</div>
+
+<div class="container">
+  <div class="role-description">
+    {% assign vowels = "architect,art_director" | split: "," %}
+    {% assign is_vowel = vowels | where_exp: "item", "item == page.key" | join: "" %}
+    <h2 style="padding-top: 2em;"> What makes {% if is_vowel == "" %}a{% else %}an{% endif %} {{ site.data.config.valueMap[page.key] }} a star?</h2>
+    {% if contractor.description_image %}
+      <p class="mb-5"><img src="{{ contractor.description_image }}"></p>
+    {% endif %}
+    <p>{{ contractor.description | markdownify }}</p>
+  </div>
+</div>
+
+{% include contact-form.html%}
