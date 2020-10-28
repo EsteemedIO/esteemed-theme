@@ -1,0 +1,21 @@
+{% if role.image %}
+  <h2 class="text-left">{{ role.label }}</h2>
+
+  <div class="row align-items-center">
+    <div class="col-md-8">
+      <img typeof="foaf:Image" src="{{ role.image }}" alt="{{ role.imgAlt }}" />
+    </div>
+
+    <div class="col-md-4">
+      <p class="role-description pb-0">
+        {{ role.description }}
+      </p>
+    </div>
+  </div>
+{% else %}
+  <h2 class="text-left mb-lg-4">{{ role.label }}</h2>
+
+  <p class="role-description pb-0">
+    {{ role.description }}
+  </p>
+{% endif %}
