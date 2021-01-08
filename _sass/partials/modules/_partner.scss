@@ -13,13 +13,13 @@
       font-family: $fontFamily-medium;
       text-align: left;
       padding-left: 10rem;
-      padding-top: 10rem;
-      font-size: 7rem;
-      @include media-breakpoint-down(xs and sm and md) {
+      padding-top: 5rem;
+      font-size: 6rem;
+      @include media-breakpoint-down(xs and sm) {
         text-align: center;
         padding-top: 4rem;
         padding-left: 0;
-        font-size: 3rem;
+        font-size: 4rem;
       }
     }
     .heroBanner-left {
@@ -37,14 +37,6 @@
     }
     .button {
       padding-left: 10rem;
-      .btn--blue {
-        font-size: 24px;
-        letter-spacing: 0.085rem;
-        padding: 20px 45px 20px;
-        @include media-breakpoint-down(xs and sm and md) {
-          font-size: 16px;
-        }
-      }
       @include media-breakpoint-down(xs and sm and md) {
         padding-left: 0;
         text-align: center;
@@ -53,16 +45,19 @@
     }
   }
   .partner-section-2 {
-    margin-bottom: 8rem;
+    margin-bottom: 3rem;
     h2 {
       font-family: $fontFamily-serif;
-      font-size: 9rem;
+      font-size: 5rem;
       margin: 8rem 11rem 8rem 15rem;
       text-align: left;
       color: $grey--dark;
       @include media-breakpoint-down(xs and sm and md) {
         font-size: 5rem;
         margin: 4rem 2rem;
+      }
+      @include media-breakpoint-only(xs) {
+        font-size: 3rem;
       }
       span {
         font-style: italic;
@@ -81,9 +76,13 @@
         @include media-breakpoint-down(xs and sm and md) {
           margin-bottom: 4rem;
         }
+        @include media-breakpoint-only(xs) {
+          flex: 0 0 100%;
+          height: 150px;
+        }
         .data {
           font-family: $fontFamily-semibold;
-          font-size: 9rem;
+          font-size: 7rem;
           color: $blue--even-darker;
           @include media-breakpoint-down(sm) {
             font-size: 7rem;
@@ -91,7 +90,7 @@
         }
         .description {
           font-family: $fontFamily-light;
-          font-size: 4rem;
+          font-size: 2rem;
           max-width: 310px;
           margin: 0 auto;
         }
@@ -101,11 +100,11 @@
   .partner-section-3 {
     .description {
       font-family: $fontFamily-light;
-      font-size: 3rem;
+      font-size: 2rem;
       margin-left: 20rem;
       margin-right: 20rem;
       @include media-breakpoint-down(xs and sm and md) {
-        font-size: 3rem;
+        font-size: 2rem;
         margin-left: 2rem;
         margin-right: 2rem;
         margin-top: 4rem;
@@ -133,8 +132,8 @@
         flex: 0 0 33.3%;
         border-top: 1px solid $blue--even-darker;
         border-left: 1px solid $blue--even-darker;
-        margin-top: -1px;
-        margin-left: -1px;
+        margin-top: -2px;
+        margin-left: -2px;
         padding: 10rem 5rem 10rem 5rem;
         @include media-breakpoint-down(xs and sm and md) {
           margin-top: -2px;
@@ -154,21 +153,23 @@
       }
       h3 {
         font-family: $fontFamily-serif;
-        font-size: 9rem;
+        font-size: 5rem;
         color: $grey--dark;
         padding: 10rem 0 0 10rem;
         @include media-breakpoint-down(xs and sm and md) {
-          font-size: 5rem;
           padding: 4rem 0;
           text-align: center;
+        }
+        @include media-breakpoint-only(xs) {
+          font-size: 4rem;
         }
       }
       .text{
         font-family: $fontFamily-light;
-        font-size: 3rem;
+        font-size: 2rem;
         padding: 10rem 10rem 0 10rem;
         @include media-breakpoint-down(xs and sm and md) {
-          font-size: 3rem;
+          font-size: 2rem;
           padding: 4rem 4rem 0 4rem;
         }
         p {
@@ -190,11 +191,14 @@
     padding-bottom: 10rem;
     .heading {
       font-family: $fontFamily-serif;
-      font-size: 6rem;
+      font-size: 5rem;
       padding-top: 10rem;
       padding-bottom: 5rem;
       letter-spacing: -2px;
       font-weight: 500;
+      @include media-breakpoint-only(xs) {
+        font-size: 4rem;
+      }
     }
     .sub-heading {
       font-family: $fontFamily-thin;
@@ -220,22 +224,24 @@
       }
       h3 {
         font-family: $fontFamily-serif;
-        font-size: 9rem;
+        font-size: 5rem;
         color: $grey--dark;
         padding: 10rem 5rem 0 10rem;
         @include media-breakpoint-down(xs and sm and md) {
-          font-size: 5rem;
           padding: 4rem 0;
           text-align: center;
+        }
+        @include media-breakpoint-only(xs) {
+          font-size: 3rem;
         }
       }
       .text{
         font-family: $fontFamily-light;
-        font-size: 3rem;
+        font-size: 2rem;
         padding: 10rem 10rem 0 10rem;
         @include media-breakpoint-down(xs and sm and md) {
-          font-size: 3rem;
-          padding: 4rem 4rem 0 4rem;
+          font-size: 2rem;
+          padding: 0 4rem 0 4rem;
         }
         p {
           margin-bottom: 3rem;
