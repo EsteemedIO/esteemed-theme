@@ -210,6 +210,21 @@ class: "front page-homepage"
       </div>
     </div>
   </div>
+  <div class="accordion container" id="accordion-home">
+    <h2>FAQ</h2>
+    {% for item in site.data.faq %}
+    <div class="card">
+      <div class="btn" data-toggle="collapse" data-target="#collapse-{{forloop.index}}" {% if forloop.first == true %}aria-expanded="true"{% endif %} aria-controls="collapse-{{forloop.index}}">
+        {{ item.title }}
+      </div>
+      <div id="collapse-{{forloop.index}}" class="collapse {% if forloop.first == true %}show{% endif %} " aria-labelledby="heading-{{forloop.index}}" data-parent="#accordion-home">
+        <div class="card-body">
+          {{ item.description | markdownify }}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
   <div class="sectionTestimonial">
     <div class="container sliderTestimonial">
       <div id="slick-views-homepage-reviews-1-slider" class="carousel slide carousel-fade" data-ride="carousel">

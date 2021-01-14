@@ -1,0 +1,40 @@
+//Styles for Accordion block
+
+.accordion {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  .card {
+    border: none;
+  }
+  .btn {
+    background-color: $blue--darkest;
+    border: 1px solid $white;
+    text-align: left;
+    padding-left: 3rem;
+    white-space: normal;
+    line-height: inherit;
+  }
+  .btn:hover {
+    color: $white;
+    text-decoration: none;
+    background-color: $blue--darkest;
+    border-color: $white;
+    opacity: 0.9;
+  }
+  .btn:focus {
+    text-decoration: none;
+  }
+  .btn::after {
+    content: "\f107";
+    color: $white;
+    top: 10px;
+    left: 10px;
+    font-size: 2rem;
+    position: absolute;
+    font-family: 'FontAwesome';
+  }
+
+  .btn[aria-expanded="true"]::after {
+    transform: rotate(180deg);
+  }
+}
