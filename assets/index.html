@@ -219,7 +219,7 @@ class: "front page-homepage"
       </div>
       <div id="collapse-{{forloop.index}}" class="collapse {% if forloop.first == true %}show{% endif %} " aria-labelledby="heading-{{forloop.index}}" data-parent="#accordion-home">
         <div class="card-body">
-          {{ item.description }}
+          {{ item.description | markdownify }}
         </div>
       </div>
     </div>
