@@ -1,0 +1,13 @@
+<div class="container half-screen">
+  <div
+      class="section{% if include.xs_reverse %} flex-xs-column-reverse{% endif %}{% if include.lg_reverse %} flex-lg-row-reverse{% endif %}">
+    <div class="heroBanner-image"><img class="half-screen-image" src="{{ include.img }}"
+                                       alt="{{ include.title }}"></div>
+    <div class="text-content">
+      <h2>{{ include.title | replace: '*site.vertical*', site.vertical | replace: '*site.title*', site.title }}</h2>
+      <div class="text half-screen-text-right">{{ include.description | replace: '*site.vertical*', site.vertical |
+        replace: '*site.title*', site.title | markdownify}}
+      </div>
+    </div>
+  </div>
+</div>

@@ -8,92 +8,56 @@ class: "node-type-page"
   title="Find the right fit with screened professionals."
   sub_title="We can provide access to top professionals with experience working with sites across multiple industries and platforms."
   img="/assets/img/hero-banner/services-professional.jpg"
+  img_class="img-align-tablet-right"
   img_alt="Professional"
   btn_text="Get Started"
 %}
 
-<div class="container service-benefits">
-  <div class="row">
-    <h2>Benefits of Professional Services</h2>
-  </div>
-  <div class="row">
-    <div class="col-md-4">
-      <div class="bene-wrapper">
-        <span class="mbri-users">&nbsp;</span><br>
-        <h3>Pro Rated Resources</h3>
-        <p>Tell us about your needs. Talent Coordinators then identify a list of resources only from the top rated contractors, and assist with coordination throughout the process.</p>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="bene-wrapper">
-        <span class="mbri-speed">&nbsp;</span><br>
-        <h3>Connect Lightning Fast</h3>
-        <p>As the largest source for contract {{ site.vertical }} resources connections to qualified resources are made within hours not days.</p>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="bene-wrapper">
-        <span class="mbri-chat">&nbsp;</span><br>
-        <h3>Professional Tools</h3>
-        <p>Email, chat and manage all contractor activity through your {{ site.title }} dashboard including time reports, payment and more.</p>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="metric-bar-wrapper">
-  <div class="pane-content">
-    <div class="container">
-      <div class="row metric-bar">
-        <div class="col-md-3">
-          <h3>200</h3>
-          <p>Developer Contractors</p>
-        </div>
-        <div class="col-md-3">
-          <h3>50</h3>
-          <p>Module Contributors</p>
-        </div>
-        <div class="col-md-3">
-          <h3>136</h3>
-          <p>Co-Maintainers</p>
-        </div>
-        <div class="col-md-3">
-          <h3>7,000+</h3>
-          <p>Linkedin Connections</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="container service-details">
-  <div class="row">
-    <div class="col-md-6">
-      <div class="img-wrapper">
-        <img alt="5 point process" src="/assets/img/5pointprocess-2.png">
-      </div>
-    </div>
-    <div class="col-md-6 description">
-      <h2 class="text-left">Five point, Five Star Process</h2>
-      <h3>Our Talent Coordinators are {{ site.vertical }} community members</h3>
-      <p>This platform was created by developers who pride ourselves on cultivating the best talent available. We
-        do that by asking everyone on the platform to chat with us about their abilities, take a short coding
-        exercise, supply code samples and provide references of past employers.</p>
-    </div>
-  </div>
-</div>
-<div class="container service-details">
-  <div class="row">
-    <div class="col-md-6  description">
-      <h2>Professional tools, Centralized Management</h2>
-      <h3>Everything in one place for your {{ site.vertical }} projects</h3>
-      <p>Professional level employers have complex projects with high demands and activity. The
-        {{ site.title }} Dashboard provides full visibility into contractor time tracking organized by project
-        coupled with communication tools, downloadable reports, payment options and more.</p>
-    </div>
-    <div class="col-md-6">
-      <div class="img-wrapper">
-        <img alt="Pro tools" src="/assets/img/pro-tools.png">
-      </div>
-    </div>
-  </div>
-</div>
-{% include code-review.html %}
+{% include half-screen.html
+  title = "Choose *site.title* for your project needs."
+  description = "*site.title* **Professional Services** gives you:
+  + curated lists of top (pre-vetted) freelance developers for each project
+  + support from talent coordinators
+  + lightning-fast hires (hours, not days)
+  + collaboration tools"
+  img = "/assets/img/professionals/journal.jpg"
+  xs_reverse = true
+  lg_reverse = false
+%}
+
+{% include half-screen.html
+  title = "Industry experts at your fingertips."
+  description = "We have extensive knowledge and experience working with the following industries:
+  + Healthcare
+  + eCommerce
+  + Software & technology
+  + Finance
+  + Retail
+  + Media"
+  img = "/assets/img/professionals/industry-experts.jpg"
+  img_class="img-align-tablet-right"
+  xs_reverse = true
+  lg_reverse = true
+%}
+
+{% include top-talent.html %}
+
+{% include half-screen.html
+  title = "Our code review is no joke."
+  description = "To be considered an Enterprise Professional, a resource must bring
+    large enterprise project experience along with technical, workflow tools,
+    remote-work experience, communication skills and a
+    demonstration of commitment to the *site.vertical* Community and *site.vertical* Coding Standards."
+  img = "/assets/img/professionals/code-review.jpg"
+  xs_reverse = true
+  lg_reverse = false
+%}
+
+{% include half-screen.html
+  title = "One bill for all your resources."
+  description = "No matter how many projects and contractors you have, you’ll receive a single monthly bill. How’s
+    that for convenience?"
+  img = "/assets/img/professionals/invoice.jpg"
+  xs_reverse = true
+  lg_reverse = true
+%}

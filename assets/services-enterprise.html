@@ -6,85 +6,55 @@ class: "node-type-page"
 
 {% include hero_banner.html 
   title="Find the right fit with Enterprise Experience."
-  sub_title="Our teams are immersed in the WordPress community and can help you connect with the best developers available."
+  sub_title="Our teams are immersed in the *site.vertical* community and can help you connect with the best developers available."
   img="/assets/img/hero-banner/services-enterprise.jpg"
   img_class="img-align-tablet-right"
   img_alt="Enterprise"
   btn_text="Get Started"
 %}
 
-<div class="container">
-  <div class="pane-content">
-    <div class="pro-block-2 blog-padding">
-      <div class="row align-items-center">
-        <div class="col-md-6  description block-2-content">
-          <h2 class="text-md-left">A dedicated Resource Manager for all of your project needs</h2>
-          <h3>We know {{ site.vertical }} Enterprise project dynamics and connect you with resources that hit the ground
-            running,</h3>
-          <p>Our Enterprise Resource Managers come from prior roles such as Developer or Technical PM with exposure to
-            {{ site.vertical }} and other CMS enterprise projects. They act as the engagement manager, and ensure that your
-            project needs are met with resource selections from our <strong>Enterprise</strong> talent pool.</p>
-        </div>
-        <div class="col-md-6 block-2-content">
-          <div class="img-wrapper"><img alt="Enterprise Resource Manager - We know the {{ site.vertical }} community"
-              src="/assets/img/ent-resource-mngr6.png"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="map-bar-wrapper container-fluid">
-  <div class="pane-content">
-    <div class="row wow animated fadeInUp" style="visibility: hidden; animation-name: none;">
-      <div class="map-bar">
-        <div class="col-md-6  description">
-          <h2>We search the world every day building relationships with the best {{ site.vertical }} talent. <a
-              href="{{ site.bot_link }}">Let's work together</a>.</h2>
-        </div>
-        <div class="col-md-6">
-          <div class="img-wrapper"><img alt="We know the {{ site.vertical }} community" src="/assets/img/map.png">
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="container">
-  <div class="pane-content">
-    <div class="row">
-      <div class="enterprise-block">
-        <div class="col-md-6">
-          <div class="img-wrapper"><img alt="Company Page" src="/assets/img/company-page-eg5.png"></div>
-        </div>
-        <div class="col-md-6 description">
-          <h2>Promote your Project, Promote your Brand</h2>
-          <h3>Your company page acts as a hub.</h3>
-          <p>The more well known your company is in the {{ site.vertical }} community the easier it is to attract the best talent.
-            Your company page on {{ site.title }} allows available talent to easily follow your updates and keep up with
-            openings on your projects, and the skills your organization is looking for.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="container wow animated" style="visibility: visible;">
-  <div class="pane-content">
-    <div class="row">
-      <div class="enterprise-block">
-        <div class="col-md-6  description">
-          <h2>Enterprise {{ site.vertical }} - Command Center</h2>
-          <h3>Centralized {{ site.vertical }} contractor management</h3>
-          <p>The {{ site.title }} Employer Dashboard provides a single source to manage {{ site.vertical }} contract job
-            postings, prospective resource lists by project, time reports, invoices, {{ site.vertical }} community news and more.
-            Need permanent resources for your team? Talk to us about <a href="mailto:{{ site.email }}">Recruitment
-              Solutions</a> through our parent Esteemed Inc.</p>
-        </div>
-        <div class="col-md-6">
-          <div class="img-wrapper"><img alt="Employer Dashboard" src="/assets/img/employer-dash-eg2.png">
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-{% include code-review.html %}
+{% include half-screen.html
+  title = "The talent you need, when you need it."
+  description = "No need to worry about negotiations or subscriptions — let us know what your
+  contracting needs are, and we’ll make it happen"
+  img = "/assets/img/enterprise/talent.jpg"
+  xs_reverse = true
+  lg_reverse = false
+%}
+
+{% include half-screen.html
+  title = "Hiring freelancers, simplified."
+  description = "Your dedicated account manager will present you with a curated list of potential contractors whenever
+  you have an open position.
+
+  Connect to our platform with your Teams or Slack account for easy integration."
+
+  img = "/assets/img/enterprise/hiring.jpg"
+  xs_reverse = true
+  lg_reverse = true
+%}
+
+{% include top-contractors.html %}
+
+{% include half-screen.html
+  title = "Our code review is no joke."
+  description = "To be considered an Enterprise Professional, a resource must bring
+  large enterprise project experience along with technical, workflow tools,
+  remote-work experience, communication skills and a
+  demonstration of commitment to the *site.vertical* Community and *site.vertical* Coding Standards."
+    img = "/assets/img/enterprise/code_review.jpg"
+  img_class="img-align-tablet-right"
+  xs_reverse = true
+  lg_reverse = false
+%}
+
+{% include half-screen.html
+  title = "One bill for all your resources."
+  description = "No matter how many projects and contractors you have, you’ll receive a single monthly bill. How’s
+  that for convenience?"
+  img = "/assets/img/enterprise/invoice.jpg"
+  img_class="img-align-tablet-right"
+  xs_reverse = true
+  lg_reverse = true
+%}
+

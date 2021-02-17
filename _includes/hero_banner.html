@@ -1,12 +1,12 @@
-<div class="heroBanner dark">
-  <div class="container">
+<div class="container heroBanner dark">
+  <div class="">
     <div class="row">
       <div class="col-md-6 d-flex align-items-center">
         <div class="heroBanner-body">
             <h1 class="hero-title">{{ include.title }}</h1>
 
           <div class="hero-subtitle">
-            <h3>{{ include.sub_title }}</h3>
+            <h3>{{ include.sub_title | replace: '*site.vertical*', site.vertical | replace: '*site.title*', site.title }}</h3>
           </div>
 
           {% if include.btn_text %}
@@ -29,13 +29,13 @@
         </div>
       </div>
 
-      <div class="col-md-6 col-md-pull-6 px-0">
-        <div class="img-wrap-width-50">
+      <div class="col-md-6 d-flex col-md-pull-6 px-0">
+        <div class="img-wrap-width-25">
           <img
             typeof="foaf:Image"
             src="{{ include.img }}"
             {% if include.img_class %}
-              class="{{ include.img_class }}"
+              class="hero-image {{ include.img_class }}"
             {% endif %}
             {% if include.btn_target %}
               alt="{{ include.img_alt }}"
