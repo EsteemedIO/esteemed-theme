@@ -9,7 +9,7 @@
       <div class="contractorBox-title">{% for title in profile.titles %}{{ site.data.config.valueMap[title] }}{% if title != last_title %}, {% endif %}{% endfor %}</div>
       <div class="contractorBox-location">
         <div class="contractorBox-location-label">Location</div>
-        <div class="contractorBox-location-value">United States</div>
+        <div class="contractorBox-location-value">{{ profile.location }}</div>
       </div>
       <div class="contractorBox-skills tags--main">
         {% if profile.skills %}
