@@ -1,0 +1,64 @@
+<div class="container top-contractors flex-wrap sectionGrey">
+  <h2 class="text-center top-contractors--title">Work with the best of the best</h2>
+  <div class="top-contractors--text text-center">We understand the needs of our enterprise clients, all potential
+    contractors pre-screened and
+    extensively vetted. Only senior developers and longtime members of {{ site.vertical}} make the cut.
+  </div>
+  <div id="top-contractors" class="carousel slide" data-ride="carousel" data-interval="false">
+    <div class="carousel-inner">
+      {% for profile_id in site.data.contractors.top %}
+      {% assign profile = site.data.profiles | where: 'id', profile_id | first %}
+      {% if forloop.index == 1 or forloop.index == 4 or forloop.index == 7 %}
+      <div class="carousel-item {% if forloop.first == true %} active{% endif %}">
+        <div class="container">
+          <div class="row top-contractors--row">
+            {% endif %}
+            <div class="col-md-4 top-contractors--item">
+              <div class="flex-wrap top-contractors--img-wrapper">
+                <a href="/profile/{{ profile_id }}">
+                  <img class="top-contractors--item-img" src="{{ profile.image }}" alt="{{ profile.name }}">
+                </a>
+              </div>
+              <div class="top-contractors--description-wrapper">
+                <a href="/profile/{{ profile_id }}">
+                  <div class="top-contractors--item-title">{{ profile.name | upcase }}</div>
+                </a>
+                {% assign last_title = profile.titles | last %}
+                <div class="contractorBox-title">{% for title in profile.titles %}{{ site.data.config.valueMap[title]
+                  }}{% if title != last_title %}, {% endif %}{% endfor %}
+                </div>
+                <div class="contractorBox-location">
+                  <div class="contractorBox-location-label">Location</div>
+                  <div class="contractorBox-location-value">{{ profile.location }}</div>
+                </div>
+                <div class="contractorBox-skills tags--main">
+                  {% if profile.skills %}
+                  <div class="item-list">
+                    <ul>
+                      {% for skill in profile.skills %}
+                      <li><a typeof="skos:Concept" property="rdfs:label skos:prefLabel">{{ skill }}</a></li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+            {% if forloop.index == 3 or forloop.index == 6 or forloop.index == 9 %}
+          </div>
+        </div>
+      </div>
+      {% endif %}
+      {% endfor %}
+
+    </div>
+    <a class="carousel-control-prev" href="#top-contractors" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#top-contractors" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>

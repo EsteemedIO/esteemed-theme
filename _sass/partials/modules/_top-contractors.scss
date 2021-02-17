@@ -1,0 +1,68 @@
+.top-contractors {
+  padding: 4rem 0;
+
+  &--row {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  &--title {
+    font-family: $fontFamily-serif;
+    font-size: 5rem;
+  }
+
+  &--text {
+    font-family: $fontFamily-light;
+    font-size: 2rem;
+  }
+
+  &--item {
+    background-color: $white;
+    height: auto;
+    width: 100%;
+    background-clip: padding-box;
+    border: 3rem solid transparent;
+    @include media-breakpoint-down(xl) {
+      border: 1rem solid transparent;
+    }
+  }
+
+  &--img-wrapper {
+    height: 50%;
+    padding: 2rem 1rem 1rem 1rem;
+  }
+
+  &--item-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &--description-wrapper {
+    height: 50%;
+  }
+
+  &--item-title {
+    font-family: $fontFamily-bold--second;
+    font-size: 1.5rem;
+    text-align: center;
+    letter-spacing: 0.35rem;
+    padding: 2rem;
+    color: $body-color !important;
+    @include media-breakpoint-down(md) {
+      padding: 2rem 1rem 1rem 1rem;
+    }
+  }
+
+  .contractorBox-skills {
+    @include media-breakpoint-down(md) {
+      margin-bottom: 4rem;
+    }
+  }
+
+  .contractorBox-title {
+    @include media-breakpoint-down(md) {
+      margin-bottom: 0;
+    }
+  }
+}
