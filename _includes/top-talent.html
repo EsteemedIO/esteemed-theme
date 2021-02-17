@@ -1,0 +1,45 @@
+{% assign top_talents = site.data.top_talents %}
+<div class="container top-talent flex-wrap sectionGrey">
+  <h2 class="text-center top-talent--title">Find top contract talent</h2>
+  <div class="top-talent--text text-center">Work with pre-screened, heavily vetted contractors who have experience
+    working in your
+    industry. Manage your resources using your existing tools — we integrate with Microsoft Teams
+    and Slack, among other platforms.
+  </div>
+  <div id="top-talent" class="carousel slide" data-ride="carousel" data-interval="false">
+    <div class="carousel-inner">
+      {% for talent in top_talents %}
+
+      {% if forloop.index == 1 or forloop.index == 4 or forloop.index == 7 %}
+      <div class="carousel-item {% if forloop.first == true %} active{% endif %}">
+        <div class="container">
+          <div class="row top-talent--row">
+            {% endif %}
+
+              <div class="col-md-4 top-talent--item">
+                <a href="/contractors/{{ talent.id }}">
+                <div class="flex-wrap top-talent--img-wrapper">
+                  <img class="top-talent--item-img" src="{{ talent.img }}" alt="{{ talent.title }}">
+                </div>
+                <div class="top-talent--item-title">{{ talent.title | upcase }}</div>
+                </a>
+              </div>
+
+            {% if forloop.index == 3 or forloop.index == 6 or forloop.index == 9 %}
+          </div>
+        </div>
+      </div>
+      {% endif %}
+      {% endfor %}
+
+    </div>
+    <a class="carousel-control-prev" href="#top-talent" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#top-talent" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
