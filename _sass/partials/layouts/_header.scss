@@ -630,6 +630,7 @@ html body {
     }
 
     .navbar-nav {
+      margin-top: 5px;
 
       @include media-breakpoint-down(md) {
         border-top: 1px solid $grey--light;
