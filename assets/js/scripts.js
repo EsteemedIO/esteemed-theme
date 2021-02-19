@@ -1,6 +1,6 @@
-<!--//--><![CDATA[//><!--
+// <![CDATA[
     (function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-141057075-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
-//--><!]]>
+// ]]>
 
 window.intercomSettings = {
   app_id: "zrqksojs"
@@ -177,9 +177,6 @@ $('.mobileMenu .js-secondLvl > span').on('click', function() {
       $thisParent = $thisFirstLvl.closest('.js-secondLvl');
   $thisParent.toggleClass('is-open');
 });
-
-// Init WOW js.
-new WOW().init();
 
  // Add class to header when scrolling.
 (function($) {
