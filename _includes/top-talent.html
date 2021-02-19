@@ -13,10 +13,10 @@
       {% if forloop.index == 1 or forloop.index == 4 or forloop.index == 7 %}
       <div class="carousel-item {% if forloop.first == true %} active{% endif %}">
         <div class="container">
-          <div class="row top-talent--row">
+          <div class="flex-wrap justify-content-around top-talent--row">
             {% endif %}
 
-              <div class="col-md-4 top-talent--item">
+              <div class="top-talent--item">
                 <a href="/contractors/{{ talent.id }}/">
                 <div class="flex-wrap top-talent--img-wrapper">
                   <img class="top-talent--item-img" src="{{ talent.img }}" alt="{{ talent.title }}">

@@ -4,6 +4,9 @@
   &--row {
     max-width: 80%;
     margin: 0 auto;
+    display: flex;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
   }
 
   &--title {
@@ -19,12 +22,20 @@
   &--item {
     background-color: $white;
     height: auto;
-    width: 100%;
-    background-clip: padding-box;
-    border: 3rem solid transparent;
-    @include media-breakpoint-down(xl) {
-      border: 1rem solid transparent;
+    width: calc(90% / 3);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+      margin-bottom: 2rem;
     }
+  }
+
+  &--item:hover {
+    transform: translateY(-3px);
+    top: -3px;
+    box-shadow: 0 10px 20px 0 rgba(108,135,135,.2);
+    border: none;
   }
 
   &--img-wrapper {
