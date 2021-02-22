@@ -58,7 +58,7 @@
       .text {
         font-family: $fontFamily-light;
         font-size: 2rem;
-        padding: 0 10rem 0 10rem;
+        padding: 0 10rem 10rem 10rem;
         @include media-breakpoint-down(xs and sm) {
           font-size: 2rem;
         }
