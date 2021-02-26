@@ -4,19 +4,27 @@
       <div class="d-flex align-items-sm-center{% if slide.img %} col-sm-6 col-md-5 col-xl-4{% else %} col-12{% endif %}">
         <div class="content-wrapper d-flex flex-column">
           {% if slide.badge %}
-            <h5 class="text-primary font-weight-bold mb-4">
+            <h5 class="text-primary font-weight-bold mb-4 subtitle">
               {{ slide.badge }}
             </h5>
           {% endif %}
 
           {% if slide.title %}
-            <h2 class="text-left">
-              {{ slide.title }}
-            </h2>
+            {% if forloop.first == true %}
+              <h2 class="text-left">
+            {% else %}
+              <h3 class="text-left">
+            {% endif %}
+                {{ slide.title }}
+            {% if forloop.first == true %}
+              </h2>
+            {% else %}
+              </h3>
+            {% endif %}
           {% endif %}
 
           {% if slide.description %}
-            <div class="content">
+            <div class="content team-slide--item-content">
               {{ slide.description | markdownify }}
             </div>
           {% endif %}
@@ -25,10 +33,10 @@
 
       {% if slide.img %}
         <div class="image-wrapper d-flex col-sm-6 px-0">
-          <div class="image d-flex justify-content-end img-wrap-width-50">
+          <div class="image d-flex justify-content-end img-wrap-width-50 flex-wrap">
             <img src="{{ slide.img }}"
                  alt="{% if slide.img_alt %}{{ slide.img_alt }}{% else %}{{ slide.title }}{% endif %}"
-                 class="image out-team-image"
+                 class="image our-team-image"
             >
           </div>
         </div>

@@ -67,6 +67,20 @@
       }
     }
   }
+  h2 {
+    font-size: 4rem;
+  }
+  h3 {
+    font-size: 3rem;
+  }
+}
+
+.subtitle {
+  font-size: 1.7rem;
+}
+
+.team-slide--item-content {
+  font-size: 1.8rem;
 }
 
 // Item team slide.
@@ -83,7 +97,11 @@
     }
 
     h2 {
+      font-size: 6rem;
       margin-bottom: 5rem;
+    }
+    h3 {
+      font-size: 4.5rem;
     }
   }
 }
@@ -118,9 +136,26 @@
       font-size: 2rem;
     }
   }
+
+  .grayscale {
+    filter: grayscale(1);
+  }
+}
+
+@include media-breakpoint-only(xs) {
+  h2 {
+    font-size: 4rem;
+  }
+  h3 {
+    font-size: 2.5rem;
+  }
 }
 
 // Joining our team.
 .block--joining-our-team {
   background-color: #989898;
+}
+
+.our-team-image {
+  max-height: 700px;
 }
