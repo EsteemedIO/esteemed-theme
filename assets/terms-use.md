@@ -6,7 +6,7 @@ contact_form: false
 ---
 
 ## Understanding your rights and responsibilities
-
+{: .padding-top-30 }
 ### Privacy Reminder
 
 **Protect your personal information by never providing social security, credit card or bank account numbers to prospective employers.**

@@ -6,7 +6,7 @@ contact_form: false
 ---
 
 ## Your Privacy Rights
-
+{: .padding-top-30 }
 Esteemed, Inc collects personal information about you and distributes that information to help you connect with employers and other job seekers with similar interests and to provide other services to you. This policy describes how information is collected and distributed and your choices with respect to your personal information.
 
 ## Information We Collect and Retain
