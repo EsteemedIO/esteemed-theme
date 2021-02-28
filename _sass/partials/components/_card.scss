@@ -20,6 +20,19 @@
   flex: 0 0 23%;
   max-width: 23%;
 
+  @include media-breakpoint-only(xs) {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding-top: 30px;
+    margin-bottom: 4%;
+  }
+
+  @include media-breakpoint-only(sm) {
+    flex: 0 0 48%;
+    max-width: 48%;
+    margin-bottom: 4%;
+  }
+
   @include media-breakpoint-up(md) {
     padding-bottom: 60px;
     padding-top: 60px;
@@ -75,6 +88,9 @@
   }
   .nav-link:hover {
     border-color: transparent;
+    @include media-breakpoint-up(xs) {
+      border-bottom: solid 2px $grey--background;
+    }
   }
 }
 
