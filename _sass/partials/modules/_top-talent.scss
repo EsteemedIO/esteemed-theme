@@ -12,12 +12,18 @@
   &--title {
     font-family: $fontFamily-serif;
     font-size: 5rem;
+    @include media-breakpoint-down(sm) {
+      font-size: 3rem;
+    }
   }
 
   &--text {
     font-family: $fontFamily-light;
     font-size: 2rem;
     padding: 0 10rem;
+    @include media-breakpoint-down(sm) {
+      padding: 2rem;
+    }
   }
 
   .half-screen-text-right {
