@@ -241,3 +241,9 @@ $(window).scroll(function() {
     }
   }
 });
+
+$('.external-link').click(function( event ) {
+  event.preventDefault();
+  var yesno = confirm("You will be redirected to another site: " + $(this).attr('href') + ". Do you want to continue?");
+  if (yesno) window.open($(this).attr('href'));
+});
