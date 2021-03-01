@@ -80,7 +80,7 @@
                   <a href="/services/enterprise/">{{ site.title }} Enterprise</a>
                 </li>
                 <li>
-                  <a href="https://esteemed.io/" target="_blank">Recruitment Solutions</a>
+                  <a class="external-link" href="https://esteemed.io/" target="_blank">Recruitment Solutions</a>
                 </li>
               </ul>
             </div>
@@ -109,10 +109,7 @@
             <div class="block__content">
               <ul class="menu nav-pills nav-stacked nav flex-column">
                 <li>
-                  <a href="/contractors/">Browse Contractors by Skill</a>
-                </li>
-                <li>
-                  <a href="https://talent.esteemed.io/jobs" target="_blank">Contracting Opportunties</a>
+                  <a class="external-link" href="https://talent.esteemed.io/jobs" target="_blank">Contracting Opportunties</a>
                 </li>
                 <li>
                   <a href="/contractors/">Contractors in the U.S.</a>
@@ -127,7 +124,7 @@
               <ul class="menu nav-pills nav-stacked nav flex-column">
                 {% for link in site.data.community_links %}
                 <li>
-                  <a href="{{ link.url }}" target="_blank">{{ link.title }}</a>
+                  <a class="external-link" href="{{ link.url }}" target="_blank">{{ link.title }}</a>
                 </li>
                 {% endfor %}
               </ul>
