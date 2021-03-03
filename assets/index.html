@@ -211,20 +211,204 @@ class: "front page-homepage"
       </div>
     </div>
   </div>
-  <div class="accordion container" id="accordion-home">
-    <h2>FAQ</h2>
-    {% for item in site.data.faq %}
-    <div class="card">
-      <div class="btn" data-toggle="collapse" data-target="#collapse-{{forloop.index}}" {% if forloop.first == true %}aria-expanded="true"{% endif %} aria-controls="collapse-{{forloop.index}}">
-        {{ item.title }}
+  <div class="container">
+    <div class="sectionLevels-subtitle history-section-4 mt-5">
+      <p>We actively build our talent pool online</p>
+      <p>and at conferences around the globe.</p>
+    </div>
+    <div class="sectionLevels-body">
+      <div class="levelBox levelBox--info">
+        <div class="levelBox-body">
+          <p>Tell us about your project and we will<br/> respond with a list of matching<br/> {{ site.vertical }}
+            talent</p>
+        </div>
+        <div class="levelBox-items js-itemsLvl">
+          <div class="levelBox-items-detail">Built-in collaboration and payment features</div>
+          <div class="levelBox-items-detail">Contractors pre-vetted by {{ site.title }}</div>
+          <div class="levelBox-items-detail">Dedicated account management</div>
+          <div class="levelBox-items-detail">Search algorithms to find the right contractors</div>
+          <div class="levelBox-items-detail">Tailored onboarding and payment options</div>
+          <div class="levelBox-items-detail">Worker classification services</div>
+        </div>
       </div>
-      <div id="collapse-{{forloop.index}}" class="collapse {% if forloop.first == true %}show{% endif %} " aria-labelledby="heading-{{forloop.index}}" data-parent="#accordion-home">
-        <div class="card-body">
-          {{ item.description | markdownify }}
+      <div class="levelBox">
+        <div class="levelBox-body">
+          <div class="levelBox-body-title">Basic</div>
+          <div class="levelBox-body-subtitle">Top quality resources are pre-vetted, mentored and receive ongoing
+            support.
+          </div>
+          <div class="levelBox-body-button"><a href="{{ site.bot_link }}" class="btn btn--white">Sign Up</a></div>
+        </div>
+        <div class="levelBox-items js-itemsLvl">
+          <div class="levelBox-items-title">
+            <strong>Basic features</strong>
+          </div>
+          <div class="levelBox-items-detail levelBox-items-detail--with-content">
+            <div class="levelBox-items-detail-content">Built-in collaboration and payment features</div>
+            <div class="levelBox-items-detail-check"><i class="fa fa-check" aria-hidden="true"></i></div>
+          </div>
+          <div class="levelBox-items-detail levelBox-items-detail--with-content">
+            <div class="levelBox-items-detail-content">Contractors pre-vetted by {{ site.title }}</div>
+            <div class="levelBox-items-detail-check"><i class="fa fa-check" aria-hidden="true"></i></div>
+          </div>
+          <div class="levelBox-items-detail levelBox-items-detail---without-content"></div>
+          <div class="levelBox-items-detail levelBox-items-detail---without-content"></div>
+          <div class="levelBox-items-detail levelBox-items-detail---without-content"></div>
+          <div class="levelBox-items-detail levelBox-items-detail---without-content"></div>
+        </div>
+        <div class="levelBox-more">
+          <button type="button" data-close="View Basic features" data-open="View less" class="js-moreLvl">View
+            Basic features
+          </button>
+        </div>
+      </div>
+      <div class="levelBox">
+        <div class="levelBox-body">
+          <div class="levelBox-body-title">Pro</div>
+          <div class="levelBox-body-subtitle">A dedicated Resource Manager can assist in hand selecting the
+            perfect
+            team.
+          </div>
+          <div class="levelBox-body-button"><a href="/services/professional/" class="btn btn--blue">See Details</a>
+          </div>
+        </div>
+        <div class="levelBox-items js-itemsLvl">
+          <div class="levelBox-items-title">
+            <strong>Pro features</strong>
+          </div>
+          <div class="levelBox-items-detail levelBox-items-detail--with-content">
+            <div class="levelBox-items-detail-content">Built-in collaboration and payment features</div>
+            <div class="levelBox-items-detail-check"><i class="fa fa-check" aria-hidden="true"></i></div>
+          </div>
+          <div class="levelBox-items-detail levelBox-items-detail--with-content">
+            <div class="levelBox-items-detail-content">Contractors pre-vetted by {{ site.title }}</div>
+            <div class="levelBox-items-detail-check"><i class="fa fa-check" aria-hidden="true"></i></div>
+          </div>
+          <div class="levelBox-items-detail levelBox-items-detail--with-content">
+            <div class="levelBox-items-detail-content">Dedicated account management</div>
+            <div class="levelBox-items-detail-check"><i class="fa fa-check" aria-hidden="true"></i></div>
+          </div>
+          <div class="levelBox-items-detail levelBox-items-detail--with-content">
+            <div class="levelBox-items-detail-content">Search algorithms to find the right contractors</div>
+            <div class="levelBox-items-detail-check"><i class="fa fa-check" aria-hidden="true"></i></div>
+          </div>
+          <div class="levelBox-items-detail levelBox-items-detail---without-content"></div>
+          <div class="levelBox-items-detail levelBox-items-detail---without-content"></div>
+        </div>
+        <div class="levelBox-more">
+          <button type="button" data-close="View Pro features" data-open="View less" class="js-moreLvl">View Pro
+            features
+          </button>
+        </div>
+      </div>
+      <div class="levelBox">
+        <div class="levelBox-body">
+          <div class="levelBox-body-title">Enterprise</div>
+          <div class="levelBox-body-subtitle">A private platform, tailored on-boarding, payment options and more.
+          </div>
+          <div class="levelBox-body-button"><a href="/services/enterprise/" class="btn btn--blue">See Details</a>
+          </div>
+        </div>
+        <div class="levelBox-items js-itemsLvl">
+          <div class="levelBox-items-title">
+            <strong>Enterprise features</strong>
+          </div>
+          <div class="levelBox-items-detail levelBox-items-detail--with-content">
+            <div class="levelBox-items-detail-content">Built-in collaboration and payment features</div>
+            <div class="levelBox-items-detail-check"><i class="fa fa-check" aria-hidden="true"></i></div>
+          </div>
+          <div class="levelBox-items-detail levelBox-items-detail--with-content">
+            <div class="levelBox-items-detail-content">Contractors pre-vetted by {{ site.title }}</div>
+            <div class="levelBox-items-detail-check"><i class="fa fa-check" aria-hidden="true"></i></div>
+          </div>
+          <div class="levelBox-items-detail levelBox-items-detail--with-content">
+            <div class="levelBox-items-detail-content">Dedicated account management</div>
+            <div class="levelBox-items-detail-check"><i class="fa fa-check" aria-hidden="true"></i></div>
+          </div>
+          <div class="levelBox-items-detail levelBox-items-detail--with-content">
+            <div class="levelBox-items-detail-content">Search algorithms to find the right contractors</div>
+            <div class="levelBox-items-detail-check"><i class="fa fa-check" aria-hidden="true"></i></div>
+          </div>
+          <div class="levelBox-items-detail levelBox-items-detail--with-content">
+            <div class="levelBox-items-detail-content">Tailored onboarding and payment options</div>
+            <div class="levelBox-items-detail-check"><i class="fa fa-check" aria-hidden="true"></i></div>
+          </div>
+          <div class="levelBox-items-detail levelBox-items-detail---without-content"></div>
+        </div>
+        <div class="levelBox-more">
+          <button type="button" data-close="View Enterprise features" data-open="View less" class="js-moreLvl">
+            View
+            Enterprise features
+          </button>
         </div>
       </div>
     </div>
-    {% endfor %}
+    <div class="sectionLevels-table js-tableLvl">
+      <div class="sectionLevels-table-row">
+        <div class="sectionLevels-table-row-header">Built-in collaboration and payment features</div>
+        <div class="sectionLevels-table-row-item">
+          <i class="fa fa-check" aria-hidden="true"></i>
+        </div>
+        <div class="sectionLevels-table-row-item">
+          <i class="fa fa-check" aria-hidden="true"></i>
+        </div>
+        <div class="sectionLevels-table-row-item">
+          <i class="fa fa-check" aria-hidden="true"></i>
+        </div>
+      </div>
+      <div class="sectionLevels-table-row">
+        <div class="sectionLevels-table-row-header">Contractors pre-vetted by {{ site.title }}</div>
+        <div class="sectionLevels-table-row-item">
+          <i class="fa fa-check" aria-hidden="true"></i>
+        </div>
+        <div class="sectionLevels-table-row-item">
+          <i class="fa fa-check" aria-hidden="true"></i>
+        </div>
+        <div class="sectionLevels-table-row-item">
+          <i class="fa fa-check" aria-hidden="true"></i>
+        </div>
+      </div>
+      <div class="sectionLevels-table-row">
+        <div class="sectionLevels-table-row-header">Dedicated account management</div>
+        <div class="sectionLevels-table-row-item"></div>
+        <div class="sectionLevels-table-row-item">
+          <i class="fa fa-check" aria-hidden="true"></i>
+        </div>
+        <div class="sectionLevels-table-row-item">
+          <i class="fa fa-check" aria-hidden="true"></i>
+        </div>
+      </div>
+      <div class="sectionLevels-table-row">
+        <div class="sectionLevels-table-row-header">Search algorithms to find the right contractors</div>
+        <div class="sectionLevels-table-row-item"></div>
+        <div class="sectionLevels-table-row-item">
+          <i class="fa fa-check" aria-hidden="true"></i>
+        </div>
+        <div class="sectionLevels-table-row-item">
+          <i class="fa fa-check" aria-hidden="true"></i>
+        </div>
+      </div>
+      <div class="sectionLevels-table-row">
+        <div class="sectionLevels-table-row-header">Tailored onboarding and payment options</div>
+        <div class="sectionLevels-table-row-item"></div>
+        <div class="sectionLevels-table-row-item"></div>
+        <div class="sectionLevels-table-row-item">
+          <i class="fa fa-check" aria-hidden="true"></i>
+        </div>
+      </div>
+      <div class="sectionLevels-table-row">
+        <div class="sectionLevels-table-row-header">Worker classification services</div>
+        <div class="sectionLevels-table-row-item"></div>
+        <div class="sectionLevels-table-row-item"></div>
+        <div class="sectionLevels-table-row-item"></div>
+      </div>
+    </div>
+    <div class="sectionLevels-footer">
+      <div class="sectionLevels-footer-title">SHOW ALL FEATURES</div>
+      <div class="sectionLevels-footer-btn">
+        <button type="button" class="js-showLvl"></button>
+      </div>
+    </div>
   </div>
   <div class="sectionTestimonial">
     <div class="container sliderTestimonial">

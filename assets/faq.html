@@ -1,0 +1,21 @@
+---
+title: FAQ
+description:
+permalink: /faq/
+contact_form: false
+---
+<div class="accordion container blog-padding" id="accordion-home">
+  <h2>FAQ</h2>
+  {% for item in site.data.faq %}
+  <div class="card">
+    <div class="btn" data-toggle="collapse" data-target="#collapse-{{forloop.index}}" {% if forloop.first == true %}aria-expanded="true"{% endif %} aria-controls="collapse-{{forloop.index}}">
+      {{ item.title }}
+    </div>
+    <div id="collapse-{{forloop.index}}" class="collapse {% if forloop.first == true %}show{% endif %} " aria-labelledby="heading-{{forloop.index}}" data-parent="#accordion-home">
+      <div class="card-body">
+        {{ item.description | markdownify }}
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
