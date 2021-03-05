@@ -15,12 +15,12 @@
             {% endif %}
             <div class="col-md-4 top-contractors--item">
               <div class="flex-wrap top-contractors--img-wrapper">
-                <a href="/profile/{{ profile_id }}">
+                <a href="/profile/{{ profile_id }}/">
                   <img class="top-contractors--item-img" src="{{ profile.image }}" alt="{{ profile.name }}">
                 </a>
               </div>
               <div class="top-contractors--description-wrapper">
-                <a href="/profile/{{ profile_id }}">
+                <a href="/profile/{{ profile_id }}/">
                   <div class="top-contractors--item-title">{{ profile.name | upcase }}</div>
                 </a>
                 {% assign last_title = profile.titles | last %}
