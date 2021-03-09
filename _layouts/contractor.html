@@ -10,7 +10,7 @@ class: "page-profile-main"
         <img typeof="foaf:Image" src="{{ page.image }}" width="100" height="100" alt="{{ page._name }}" class="field-name-field-profile-picture">
         <h1 class="text-left">{{ page._name }}</h1>
         <h2>{{ page.location }}</h2>
-        <p style="clear:left">
+        <p class="font-weight-bold" style="clear:left">
           {%- for title in page.titles -%}
           {{ site.data.config.valueMap[title] }}{%- if forloop.last != true %} | {% endif -%}
           {%- endfor -%}
@@ -20,7 +20,7 @@ class: "page-profile-main"
       <section class="c-card c-card--inverted-outline tags--main">
         <h3>Skills</h3>
         {% for skill in page.skills %}
-        <a typeof="skos:Concept" property="rdfs:label skos:prefLabel">{% if site.vertical == 'Drupal' %}{{ skill }}{% else %}{{ site.data.config.valueMap[skill] }}{% endif %}</a>
+        <a class="mb-2" typeof="skos:Concept" property="rdfs:label skos:prefLabel">{% if site.vertical == 'Drupal' %}{{ skill }}{% else %}{{ site.data.config.valueMap[skill] }}{% endif %}</a>
         {% endfor %}
       </section>
     </div>
