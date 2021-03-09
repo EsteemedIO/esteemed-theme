@@ -54,6 +54,9 @@
                   <a class="dropdown-item dropdown-toggle dropdown-item-first" href="#">Browse Contractors<span class="caret"></span></a>
                   <ul class="dropdown-menu">
                     {% for title in site.data.config.titles %}
+                    {% if title.key == 'sys_admin' and  site.vertical == 'Drupal' %}
+                      {% continue %}
+                    {% endif %}
                     <li><a href="/contractors/{{ title.key }}/" title="{{ site.data.config.valueMap[title.key] }}">{{ site.data.config.valueMap[title.key] }}</a></li>
                     {% endfor %}
                     <li><a href="/contractors/">See All</a></li>
