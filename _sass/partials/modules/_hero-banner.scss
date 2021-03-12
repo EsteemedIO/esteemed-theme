@@ -92,7 +92,7 @@
     }
 
     @include media-breakpoint-up(lg) {
-      padding: 10rem 1rem 0 10rem;
+      padding: 10rem 1rem 0 0;
     }
   }
 
@@ -148,6 +148,7 @@
     }
 
     @include media-breakpoint-up(lg) {
+      padding: 10rem 1rem 0 10rem;
       .hero-title {
         font-size: 6rem;
       }
