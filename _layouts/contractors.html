@@ -94,7 +94,7 @@ layout: default
   <div class="role-description py-5">
     {% assign vowels = "architect,art_director" | split: "," %}
     {% assign is_vowel = vowels | where_exp: "item", "item == page.key" | join: "" %}
-    <div class="section flex-xs-column-reverse">
+    <div class="section flex-xs-column-reverse mb-5">
       <div class="heroBanner-image"><img class="image" src="{{ contractor.description_image }}" alt=""></div>
       <div class="text-content">
         <h2 class="mt-0">What makes {% if is_vowel == "" %}a{% else %}an{% endif %} {{ site.data.config.valueMap[page.key] }} a star?</h2>
