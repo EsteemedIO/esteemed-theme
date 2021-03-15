@@ -159,6 +159,9 @@
 
   @include media-breakpoint-up(lg) {
     height: 60px;
+    .container {
+      padding: 0 15px;
+    }
   }
 
   &-body {
