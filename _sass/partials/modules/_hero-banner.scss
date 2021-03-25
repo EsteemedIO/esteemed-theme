@@ -131,10 +131,9 @@
   &.dark {
     background-color: $newblue--darkest;
 
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(lg) {
       .heroBanner-body {
-        padding-top: 90px;
-        padding-bottom: 50px;
+        padding: 10rem 1rem 10rem 10rem;
       }
 
       .hero-subtitle {
@@ -148,7 +147,6 @@
     }
 
     @include media-breakpoint-up(lg) {
-      padding: 10rem 1rem 0 10rem;
       .hero-title {
         font-size: 6rem;
       }
