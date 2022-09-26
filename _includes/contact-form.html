@@ -46,7 +46,13 @@
               <div class="response" id="mce-success-response" style="display:none"></div>
             </div> <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
             <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_ec5b82da5b213df9999d28215_a6b16fcb11" tabindex="-1" value=""></div>
+            {% if page.recaptcha %}
+            <div class="submit"><input type="submit" id="mc-embedded-subscribe" value="Talk to us" name="subscribe" class="button g-recaptcha"
+                   data-sitekey="{{ site.recaptcha_api_key }}"
+                   data-callback="submitContactForm" data-size="invisible"></div>
+            {% else %}
             <div class="submit"><input type="submit" value="Talk to us" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+            {% endif %}
           </div>
         </form>
       </div>
